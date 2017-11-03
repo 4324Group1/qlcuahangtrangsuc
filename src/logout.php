@@ -1,9 +1,9 @@
 <?php
 session_start();
-if($_SESSION["user"] && $_SESSION["authority"]){
+if(isset($_SESSION["user"]) && isset($_SESSION["authority"])){
 	session_destroy();//xóa dữ liệu đăng nhập
 }
 
-	header("Location: ../index.php");//quay về trang home
+	header("Location: http://localhost/Shop/index.php");//quay về trang home
 
 ?>
