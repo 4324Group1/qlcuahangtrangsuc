@@ -2,35 +2,14 @@
     {
 session_start();
 }
-if(isset($_GET['page'])){
-	if($_GET['page'] =="register"){
-		include_once("view/access/register.php");
-	}
-}
-if(isset($_SESSION['user']) && isset($_SESSION['authority'])){
-	
-if(!isset($GET['page'])){
-	$GET['page']="index";
-}
-
-include_once("view/".$_SESSION["authority"]."_view/".$GET['page'].".php");
-
-
-
-}
-else{
-
-	include_once("view/access/login.php");
-}
-
-<?php   if(!isset($_SESSION)) 
-    {
-session_start();
-}
 include_once("src/info.php");
 
 $chekpage=false;
-$lispage= array('profile','qlymembers','register','login','logout');
+if($authority =='admin'){
+	$lispage= array('profile','qlymembers','register','login','logout');
+}else{
+	$lispage= array('register','login','logout','profile');
+}
 foreach ($lispage as $page) {
 
 	if(isset($_GET['page'])){

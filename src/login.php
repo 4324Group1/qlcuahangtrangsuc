@@ -23,7 +23,7 @@ $SQL = "SELECT * FROM ttdangnhap inner join chucvu on ttdangnhap.macv=chucvu.mac
            }else{
            	$_SESSION["authority"] = "member";
            }
-             header("location:index.php?page=index");// chuyển trang
+             header("location:index.php");// chuyển trang
     	           
       
            }else{
